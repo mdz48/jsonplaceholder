@@ -15,5 +15,8 @@ export class PostService {
     return this.httpClient.get<IPost[]>(url)
   }
 
-  
+  doPost(post: IPost): Observable<IPost> {
+    let url = 'https://jsonplaceholder.typicode.com/posts';
+    return this.httpClient.post<IPost>(url, post);
+  }
 }
